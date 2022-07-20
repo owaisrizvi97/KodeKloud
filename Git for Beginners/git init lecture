@@ -68,5 +68,25 @@ modified shows for edited file. Such as:
 	then add commits:
 	git commit -m "newly added files"
 	
+	
+- NOTE:
+=========
+	All commits must be atomic. 
+	Means if owais and namrah works on same app and owais fixed the front-end button navigation.
+	then owais should push it as one seperate commit. This is best practice.
+	
+	However, if owais fix JS and commit this and fix CSS and html for button navigation and commit another change, 
+	then it's bad practice. because ideally it must lie under one commit as it relates with one problem.
+	
+	If namrah fix a bug and add front-end page then add a single commit, it is also bad practice because front page 
+	and bug fix is not corelate with each other and does not defined explicitly.
+
+- If you want to unstage any file from staging area simply use:
+	git restore --staged <filename> 
+	
+- If you want that your personal ideas and notes should not be pushed to git, you can simply add the .gitignore folder under the place where your personal notes are present. Lets say my notes are under git/notes.txt. So, I will do this:
+				cd git ; echo "notes.txt" >> .gitignore
+			
+- Now run the git status and you'll not see untracked file of notes.txt that you just created or modified, you might mistakenly run the git add . command which will move all modified and newly created files into staging area. We use gitignore to avoid this.
 
 
