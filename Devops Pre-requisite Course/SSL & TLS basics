@@ -1,0 +1,39 @@
+SSL TLS basics and Application security:
+========================================
+
+
+
+Symmetic Encryption:
+---------------------
+
+- The type of encryption takes place during the web traffic synchronization b/w client-server model in which the data is encrypted and decrypted using the SAME key. That key is exchanged over the same network and thus attacker on network gets it to decrypt the data.
+
+- To avoid this, we use the Asymmetric encryption.
+
+Asymmetric Encryption:
+----------------------
+
+- Instead of using a single key, we use the pair of keys.
+- Private key & public key (public Lock)
+- A key is only with me is private, a lock can anyone access is lock.
+- You can only unlock using the respective key that you have.
+- A private key must not be shared by any means.
+
+- look at example of SSH into server.
+	- you need to create a SSH key using: ssh-keygen command.
+	- you need to copy the id_rsa.pub content in server's authorized_keys file as under:
+	
+		cat ~/.ssh/authorized_keys
+		vim ~/.ssh/authorized_keys
+			ssh-rsa aaaxhaounaoufaheraonlaHon313280qaosnduq1803781 owaisalicli@gaditek
+			
+	- you can use the below command directly to copy the public key of jump host into app01:
+		ssh-copy-id -i ~/.ssh/mykey.pub thor@app01
+- In order to create CSR using openssl command having private key of 2048 bits. Use below command:
+
+	> sudo openssl req -new -newkey rsa:2048 -nodes -keyout app01.key -out app01.csr
+
+- In order to generate Self signed Certificate without signing to CA. use:
+	> sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout app01.key -out app01.crt
+	
+

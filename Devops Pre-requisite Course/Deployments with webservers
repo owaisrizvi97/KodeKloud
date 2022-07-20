@@ -1,0 +1,63 @@
+Apache tomcat:
+---------------
+
+- Apache tomcat allows us to host java based applications
+- As pre-requisite you must have Java and JDK installed on your linux env.
+	
+	> yum install java-1.8.0-openjdk-devel
+	> wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.53/bin/apache-tomcat-8.5.53.tar.gz
+	> tar -xvf apache-tomcat-8.5.53.tar.gz
+	> ./apache-tomcat-8.5.53/bin.startup.sh
+- 8080 is default port.
+- ls -l apache-tomcat-8.5.53 
+	-it shows multiple files came with apache tomcat.
+	-if you go to bin. You can see the sh and bat files.
+	-sh is for linux, bat is for windows.
+	-startup.sh & shutdown.sh is for start and stop apache tomcat.
+	-Conf > contains the configuration of server.
+	-like port, what type of traffic you allow.
+	-logging mechanism.
+	-server.xml is the file having conector which is the endpoint where application is listening. it has 8080
+	configured there.
+	-web.xml is used to deploy and configure web apps.
+	logs directory is where the logs are stored.
+	webapps folder is where your application is present to be served.
+	
+- Now we want to host the java web app on tomcat. 
+- first we archive the java files using jar utility to convert into war. Since it's web app, so web archive (war) is used.
+	> jar -cfv app.war *
+- alternate approach is to use the build package like maven or gradle
+	> mvn package
+	> gradle build
+- now move app.war to webapps folder.
+- if apache tomcat is running, it automatically extract the war file to app folder having all of the java and html files.
+to be served.
+- you can verify by cat ~/apache-tomcat-8.5.53/logs/catalina.out
+- visit the url using https://localhost:8080/app
+
+
+Python Deploy Flask App:
+=========================
+
+
+when you install the flask using pip. it runs on internal webserver came with flask. Don't use it in production.
+to run the code in production, you need gunicorn server for flask. 
+	: Run gunicorn main:app
+		Here main is the main.py file, while the app is the flask variable in main.
+			app= Flask(_name_)
+	default port is 8000
+
+if you want, you can run two workers of gunicorn to run your app. 
+	: gunicorn main:app -w 2
+	
+	
+	
+	
+	
+	
+	
+
+
+Node JS Express Deployment with Webserver:
+
+-

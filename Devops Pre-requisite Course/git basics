@@ -1,0 +1,93 @@
+Source Control Version:
+==========================
+
+
+
+1. First step is to convert your local project directory into git repository. known as initializing git repository.
+2. Configure files to track changes.
+3. Gets started with track changes via Git.
+4. Each time you have made change to file, tell git explicitly that you are done with the changes and please keep track 
+of it. that's called "Commit Changes"
+
+
+If you want to perform changes into specific file and push it to stage. You can do this, so 4th step would be stage changes before actually commit changes. Stage changes is the place where changes are ready to commit.
+
+	> consider a scenario where utlis.py will need to be changed first before change the backend.py and db.py.
+	in this case, the backend & db files can be changed but before these two, you can perform changes in 
+	utils.py and keep it under stage area. once the backend.py & db.py commits you can then commit those
+	stage file (i.e. utils.py) into real commit change section.
+	
+	
+step 0: sudo yum install git
+git version
+
+step 1: git init
+	initialize git repo. It creates the hidden git folder in your local directory like .git
+	.git contains all info for changes of files in that directory.
+
+git status command can be used to check status.
+
+step 2: git add License main.py utils.py db.py ...
+
+	> to configure files to track.
+
+step 3: Now run git status:
+	> it shows changes to all files to keep in track under changes to be commited section. While shows the file 
+	notes.txt can be seen untracked file as we did not supply it in git add command.
+	
+	Now any change in main.py will be considered as modified by git and it shows that changes are not staged for commit. All files are unstaged.
+
+
+Step 4: Next step is to stage changes.
+
+	use git add main.py
+	this time it staged the changes and marked it as ready to commit.
+	
+	
+
+Most Important.
+	
+so the way git add command works if you run this command against a file that is not being tracked (as were all these files in begining when you install and initialize git). It tracks them and stages at same time. Whenever you modifies any of these files, they are unstaged and goes back to modified state. Running on git add command on tracked and unstaged file, it stages the file and adds it to the list of files to be commited.
+
+
+
+Step 5: Commit changes
+
+	run> git commit -m "initial message"
+	git commit and -m specify the commit message, like what you have commited or changed. Like if you change the variable enter "change variable" or if you change the query string write "change query string".
+	if you don't use -m, it opens editor to type the message.
+	Once commited, git creates new version of repository.
+	
+	
+	
+- Git remote repositories can be used to push the local laptop code to your remote central repo so that it can be accessed publically.
+- Developers can push their code from their local laptop to remote repo.
+- After push, all members can fetch the latest version of code with updated commits so that all can know what has been changed to when.
+- to start with, you need to:
+	git init 
+	git add .
+	git commit -m "commit message"
+	
+- Specify your local repo to push the code to remote repo.
+- For this, use:
+	git remote add <name> <url>
+		Here:
+		<name> is not the actual name of git repo, its just for your understanding and differentiation.
+		because you can have same code in multiple remote repo.
+		<url> is the git remote address.
+	Next use:
+		git push <name> <branch>
+		e.g.#  git push github master
+		git push -u github master > -u is because the master branch is not created in remote repo & pushing
+		code first time.
+		the default name of master branch is origin, so always use:
+			git push origin master (after perform changes, commit them and update repo).
+
+- Now code is available on remote github repo in master branch.
+- Dev can clone the whole master repo like:
+	git clone <url>
+	git remote -v
+		is used to get the remote repo Url and details.
+		now dev does not need to configure the remote repo because it's already configured.
+	git pull 
+		> pull only the latest changes as opposed to clone the entire remote repo.

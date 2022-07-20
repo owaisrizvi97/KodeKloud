@@ -1,0 +1,36 @@
+-mysql is open source
+- it stored db in sql format
+
+steps to install:
+
+1) download the rpm package from mysql downloads page
+	> wget https://...
+	
+2) extract the pakage through rpm
+	> rpm -ivh mysql80-community-version.rpm
+3) install through yum:
+	> yum install mysql-server
+4) service mysqld start
+5) service mysqld status
+
+logs are under cat var/log/mysqld.log
+default port is 3306
+
+to connect it with mysql, u need mysql client utility such as phpmyadmin or adminer.
+when mysql is installed, it generates a temp password found under the mysqld.log
+use that password to connect with the database like:
+	mysql -u root -p(password)
+	
+	
+	Important: If you want to change the root user password in mariadb:
+	In case of MariaDB use below mentioned queries:
+
+i. Login to mysql database server: - mysql -u root
+
+and then run the following queries in it.
+
+ii. USE mysql;
+
+iii. UPDATE user SET password=PASSWORD('P@ssw0rd123') WHERE User='root' AND Host = 'localhost';
+
+iv. FLUSH PRIVILEGES;

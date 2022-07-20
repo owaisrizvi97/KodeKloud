@@ -1,0 +1,112 @@
+Java compile workflow for Java App deployments:
+
+-create a java program named myclass.java
+-compile it using:
+	javac myclass.java
+- it creates compiled file named myclass.class
+- run it by:
+	java myclass 
+	>> Hello world
+- Now if you have multiple java programs such as source code for service, frontend, webhook and other modules
+you might have multiple java compiled files. multiple source code compiled files may dependent on other libraries
+and modules. So, we use java archive JAR to bring it under one package by:
+
+	jar cf myclass.java service.java library.java docfile.java ...
+	
+- Now if you want to create documentation of your source code and builds. 
+- Run javadoc -d doc myclass.java 
+	>> creaet html doc file contains the purpose of code.
+-The process seems quite hectec when using with large java apps and files to create builds.
+- For this, we use configuration management tool to automate the java builds.
+- we have three tools like:	ANT Maven & Gradle
+
+
+NODE deployment:
+
+-to install node > curl -SL https://rmp.nodejs.com/node_setup13 ; Bash - 
+-node -v > use to check the node version.
+-to install the node package manager use > npm install <pacakge name> 
+-this will install the package in current directory under the node_modules folder
+
+	directory structure of installed package :
+		node_module
+			|_> <package_name> and package.json
+				|_> lib, src, readme, core, Js, dependencies and it's package history.
+
+-If you want to install package globally use -g.
+-pacakge with global installed under:
+	/usr/lib/node_modules/
+-Some of the built in modules with npm are installed already such as debug, http package, file package etc.
+-They can be found under:
+	/usr/lib/node_modules/npm/<package_name/
+	/usr/lib/node_modules/npm/package.json
+		|_> contain the npm info, dependencies, author and other version history along with 
+		pre-requisite dependent package.
+	
+
+Python App deployment:
+========================
+
+
+
+
+- you have different pip version according to python2 & python3.
+- python3 pip is pip3 and python2 pip is pip2.
+- when you install python it creates directory structure like this.
+- when you install any package like pip3 install file, it goes under usr/lib/python3.6/site-packages/
+- when you install any package like pip2 install file, it goes under usr/lib/python2.7/site-packages/
+
+
+	usr
+	|__lib
+	    |___python2.7
+	    |      |__site-packages
+	    |____python3.6
+	    |       |__site-packages
+	    |
+	    lib64
+	    |___python2.7
+	    |     |__site-packages
+	    |
+	    |___python3.6
+	        |__site-packages
+
+- if package is 64 bit, then it will go under usr/lib64/python3.6/site-packages/
+- for pip3 install flask > it goes under usr/lib64/python3.6/site-packages/flask-1.1.1.dist-info
+- to fetch the package installation path, run pip show <package name> i.e. pip show flask
+	> location: /usr/lib64/python2.7/site-packages
+- if you want to know from where python interpreter look for packages when it's loaded in code. Use:
+	python3 -c "import sys; print(sys.path)
+	
+- when you want to install multiple packages and dependencies, combine them in single requirements.txt file and use it with pip install -r command. like this:
+	> pip install -r requirements.txt
+	Requirements.txt			
+	|					
+	|
+	|__flask
+	|__djanog
+	|__Markupsafe
+	|__requests
+	|__gunicorn
+	
+	OR
+	
+	Requirements.txt			
+	|					
+	|
+	|__flask=1.2
+	|__djanog=3.9
+	|__Markupsafe=2.5
+	|__requests=3.2
+	|__gunicorn=4.7
+	
+- pip uninstall flash > to delete the package.
+- pip upgrade flask > to update the package version.
+
+- there are other package managers like easy_install that converts the .py file into .egg (.egg is like jar in java).
+- you can use the easy_install like :
+	> easy_install install app
+		|__ this will install the easy_install utility to convert the app.py into app.egg. 
+		|__ next, you can simply place that .egg file into python location where python interpreter can find.
+		|__ you dont need to unpacked or extract the .egg file.
+		
