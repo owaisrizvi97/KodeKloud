@@ -16,5 +16,39 @@
 
 		nothing added to commit but untracked files present (use "git add" to track)
 
+- Next, you need to run git add command to add your whole project into staging.
+	git add ./*
+	or
+	git add <filename>
+- Now when you run git status it shows this:
+	
+	On branch master
+
+	No commits yet
+
+	Changes to be committed:
+	  (use "git rm --cached <file>..." to unstage)
+		new file:   Devops Pre-requisite Course/Application deployment mechanism and basics (kodekloud)
+		new file:   Devops Pre-requisite Course/Course Material/Introduction/Additional-Resources.pdf
+		new file:   Devops Pre-requisite Course/Course Material/Introduction/DevOps-Pre-Requisites-v2.pdf
+		new file:   Devops Pre-requisite Course/Database basics
+		new file:   Devops Pre-requisite Course/Deployments with webservers
+		new file:   Devops Pre-requisite Course/SSL & TLS basics
+		new file:   Devops Pre-requisite Course/git basics
+		new file:   Devops Pre-requisite Course/sample app deployment
+		new file:   Git for Beginners/git init lecture
+		new file:   Kubernetes Book.pdf
+		new file:   Linux: Bootcamp.pdf
+
+- Now we can simply use the git commit -m "my first commit" command to associate the commit.
+
+- If you modified any of these file accidentaly and wish to restore the previous version of file use:
+	git restore <filename>
+
+- If you delete the file that was staged and you wish to restore it, you can use git restore command. But if you want to 
+delete the commits and/or staged status from git repo, use:
+		git rm <filename>
+		this will permanently delete the file commits and staged status from git.
+- 
 
 
