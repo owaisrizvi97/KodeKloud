@@ -49,6 +49,24 @@
 delete the commits and/or staged status from git repo, use:
 		git rm <filename>
 		this will permanently delete the file commits and staged status from git.
-- 
+- If we create a new file and also modified the existing file, so git status would be to untracked newly added file and 
+modified shows for edited file. Such as:
+
+		On branch master
+		Changes not staged for commit:
+		  (use "git add <file>..." to update what will be committed)
+		  (use "git restore <file>..." to discard changes in working directory)
+			modified:   Git for Beginners/git init lecture
+
+		Untracked files:
+		  (use "git add <file>..." to include in what will be committed)
+			Git for Beginners/test.html
+
+		no changes added to commit (use "git add" and/or "git commit -a")
+- you can now add both of the files into staged using:
+	git add .
+	then add commits:
+	git commit -m "newly added files"
+	
 
 
