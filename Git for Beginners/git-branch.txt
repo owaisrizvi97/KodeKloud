@@ -9,4 +9,5 @@ git merge <branch name>
 	> fast forward >> works when there are no commits in master. Then it merges the commit of child branch to master.
 	> no fast forward >> will be done when there are commits in master branch, creates a new commit having pointed to 
 	all commits in master and child branch perfectly.
+	> newly..
 
