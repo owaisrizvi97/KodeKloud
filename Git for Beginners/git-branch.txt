@@ -14,4 +14,87 @@ git merge <branch name>
 	> no fast forward >> will be done when there are commits in master branch, creates a new commit having pointed to 
 	all commits in master and child branch perfectly.
 	
+Out put:
+
+---------
+
+
+gaditek@clw-po-owaisali:~/Documents/KodeKloud$ git merge owais
+Merge made by the 'recursive' strategy.
+ Git for Beginners/git-branch.txt | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+ create mode 100644 Git for Beginners/git-branch.txt
+gaditek@clw-po-owaisali:~/Documents/KodeKloud$ git log
+commit 1dd3506e923689cae92b2fa7971cc7cfa4b547d9 (HEAD -> master)
+Merge: 034a6ad 286066c
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Sat Jul 23 02:03:22 2022 +0500
+
+    Merge branch 'owais'
+
+commit 286066c8f14cedda97e2077cb466181b6f62fa23 (owais)
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Sat Jul 23 02:01:12 2022 +0500
+
+    File complete, ready to merge
+
+commit 034a6ad282aa7a98a4657ffb731fee285f9210af
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Sat Jul 23 01:58:50 2022 +0500
+
+    fixed issue of thanks in git init lecture
+
+commit 161b76d0507e3ac126d05dfff417e70b9103ac15
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Sat Jul 23 01:56:31 2022 +0500
+
+    Incomplete branch
+
+commit de9c7c98fb68edce321b66cbc94b856902dbbad1
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Sat Jul 23 01:53:36 2022 +0500
+
+    Created new branch lecture file on owais child branch
+
+commit 30f2b2cbaee9e8ec96b48b6f0a4a96414c09ee11
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Sat Jul 23 00:23:16 2022 +0500
+
+    Git resources
+
+commit b04dbca12b02d24589eb1dd5031084d8ec0d0542
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Sat Jul 23 00:21:02 2022 +0500
+
+    Git log info. Updated kodekloud repo 23th july
+
+commit 0964744d5d611dd7af01009ce6dce5ab8f92470f
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Wed Jul 20 21:48:41 2022 +0500
+
+    final updates of giti init lecture file till 20th july
+
+commit d94afa89f4b94b70e7b9bdbd99b9efab5908740d
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Wed Jul 20 21:24:21 2022 +0500
+
+    unstaged the first file of git init lecture and add test html file
+
+commit 09db3676f27e84ceb7dafa308e49595f18f7f206
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Wed Jul 20 20:45:35 2022 +0500
+
+    Added second file and updated file
+
+commit fdc38a207e49689bc6e2d2c10219545ae84d7e95
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Wed Jul 20 20:34:49 2022 +0500
+
+    New changes regarding to git commands in kodekloud
+
+commit f684d4479e4773625732dc18526c48efa5e0009d
+Author: Syed Owais Ali Rizvi <gaditek@clw-po-owaisali.cloudways>
+Date:   Wed Jul 20 20:27:05 2022 +0500
+
+    kodekloud repo commit
 
