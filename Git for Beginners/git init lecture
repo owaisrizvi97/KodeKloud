@@ -90,3 +90,8 @@ modified shows for edited file. Such as:
 - Now run the git status and you'll not see untracked file of notes.txt that you just created or modified, you might mistakenly run the git add . command which will move all modified and newly created files into staging area. We use gitignore to avoid this.
 
 
+-You can also check the logs who made changes or commits to which file using command:
+	> git log
+	> git log --name-only (tells the filename, author, commit hash and date)
+	> git log --oneline (tells commits in oneline without author, date etc)
+
