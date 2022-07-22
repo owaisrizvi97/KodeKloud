@@ -1,0 +1,12 @@
+git branch (for listing branches)
+git branch <branch-name> (to create new branch only)
+git checkout -b <newly created branch name> ( to create and immediately switch into it)
+git checkout <branch name> (to swich into branch)
+git branch -d <branch name> ( to delete branch)
+
+
+git merge <branch name>
+	> fast forward >> works when there are no commits in master. Then it merges the commit of child branch to master.
+	> no fast forward >> will be done when there are commits in master branch, creates a new commit having pointed to 
+	all commits in master and child branch perfectly.
+
