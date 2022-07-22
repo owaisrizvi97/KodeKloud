@@ -94,4 +94,4 @@ modified shows for edited file. Such as:
 	> git log
 	> git log --name-only (tells the filename, author, commit hash and date)
 	> git log --oneline (tells commits in oneline without author, date etc)
-
+- Thanks
